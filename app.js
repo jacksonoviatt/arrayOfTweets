@@ -65,7 +65,7 @@ var twitterFeed = [
 ];
 
 //This creates a number variable that is equivilent to the number of items in the array.
-var twitterFeedLength = twitterFeed.length;
+// var twitterFeedLength = twitterFeed.length;
 
 
 // This is a loop that will iterate through the array.  
@@ -73,11 +73,33 @@ var twitterFeedLength = twitterFeed.length;
 // This tells to the code to loop the correct amount of times
 
 
-for (var counter = 0; counter < twitterFeedLength; counter++) {
-    // This console log calls on the objects and prints them as they loop
-    //The [counter] connected to the twitterFeed section of the object accessor tells the computer to iterate through the twitterFeed array and not through the individual objects
-    //The + signs are connecting the objects and are seperated by a string of extra spaces
-   console.log(twitterFeed[counter].tweet + `   ` + twitterFeed[counter].username + `   ` + twitterFeed[counter].date);
+// for (var counter = 0; counter < twitterFeedLength; counter++) {
+//     // This console log calls on the objects and prints them as they loop
+//     //The [counter] connected to the twitterFeed section of the object accessor tells the computer to iterate through the twitterFeed array and not through the individual objects
+//     //The + signs are connecting the objects and are seperated by a string of extra spaces
+//    console.log(twitterFeed[counter].tweet + `   ` + twitterFeed[counter].username + `   ` + twitterFeed[counter].date);
+// }
+
+
+
+// This is a function that returns true if the users age is over 18,
+//  and returns false if the users age is below 18
+
+function adultChecker(user) {
+    if(user.age >= 18) {
+        return true;
+    } else if(user.age < 18){
+        return false;
+    } else { 
+        console.log('whoops');
+        return undefined
+    }
 }
 
+// Here we use the built in filter function to loop through our twitterFeed array
+// and filter to show only the "true" statements
+//  We determine which statements are true by calling on the adultChecker function we just created
+var usersOver18 = twitterFeed.filter(adultChecker);
 
+// console.log to check out the new filtered array
+console.log(usersOver18);
